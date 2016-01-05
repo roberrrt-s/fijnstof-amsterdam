@@ -208,7 +208,7 @@ function getWeather() {
 		richting: "O"
 	},
 	{
-		wind: 2.1, 
+		wind: 3.8, 
 		richting: "NO"
 	}]
 }

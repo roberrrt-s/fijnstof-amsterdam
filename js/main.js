@@ -103,7 +103,7 @@ function updateDay(day) {
 }
 
 function updateWeather(day) {
-	document.getElementById("weather").innerHTML = weatherdata[day].richting + " " + weatherdata[day].wind
+	document.getElementById("weather").innerHTML = weatherdata[day].richting + " " + (1 + (weatherdata[day].wind / 10));
 }
 
 map.on('zoomend', function() {
