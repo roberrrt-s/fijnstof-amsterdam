@@ -1,0 +1,65 @@
+body {
+	font-family: "Arial";
+}
+button {
+	margin: 5px;
+}
+
+#map {
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	position: absolute;
+}
+
+.node {
+	width: 50px;
+	height: 50px;
+	z-index: 1000;
+}
+
+.fijnstof {
+	fill: #F68E2F;
+}
+
+.ultrafijnstof {
+	fill: #EB4040;
+}
+
+.link {
+    stroke: #eee;
+}
+
+rect:hover {
+	background-color: #F00;
+}
+
+.leaflet-marker-icon {
+	left: -50px;
+	top: -50px;
+}
+
+#controls {
+	width: 200px;
+	height: 100px;
+	position: absolute;
+	z-index: 1000;
+	top: 10px;
+	right: 10px;
+	background-color: #222;
+	color: #EEE;
+	padding: 10px;
+}
+
+#weather {
+	width: 200px;
+	height: 300px;
+	position: absolute;
+	z-index: 1000;
+	top: 10px;
+	left: 10px;
+	background-color: #222;
+	color: #EEE;
+	padding: 10px;
+}
