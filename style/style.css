@@ -5,6 +5,10 @@ button {
 	margin: 5px;
 }
 
+.st0 {
+	fill: #FFFFFF;
+}
+
 #map {
 	top: 0;
 	left: 0;
@@ -46,7 +50,7 @@ rect:hover {
 	position: absolute;
 	z-index: 1000;
 	top: 10px;
-	right: 10px;
+	left: 10px;
 	background-color: #222;
 	color: #EEE;
 	padding: 10px;
@@ -54,12 +58,11 @@ rect:hover {
 
 #weather {
 	width: 200px;
-	height: 300px;
+	height: 20	0px;
 	position: absolute;
 	z-index: 1000;
 	top: 10px;
-	left: 10px;
-	background-color: #222;
+	right: 10px;
 	color: #EEE;
 	padding: 10px;
 }

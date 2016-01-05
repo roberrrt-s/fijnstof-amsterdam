@@ -103,7 +103,40 @@ function updateDay(day) {
 }
 
 function updateWeather(day) {
-	document.getElementById("weather").innerHTML = weatherdata[day].richting + " " + (1 + (weatherdata[day].wind / 10));
+
+	var draai;
+
+	switch(weatherdata[day].wind) {
+		case "W":
+			draai = 0;
+			break;
+		case "NW":
+			draai = 45;
+			break;
+		case "N":
+			draai = 90;
+			break;
+		case "NO":
+			draai = 135;
+			break;		
+		case "O":
+			draai = 180;
+			break;
+		case "Z":
+			draai = 270;
+			break;	
+	}
+
+	TweenMax.to("#wijzer", 1, {
+		transformOrigin: "50% 50%",
+		scale: 1 + (weatherdata[day].wind / 10),
+	}, 0.2)
+
+	TweenMax.to("#pointer", 1, {
+		transformOrigin: "64% 50%",
+		rotation: draai
+	}, 0.2)
+//	document.getElementById("weather").innerHTML = weatherdata[day].richting + " " + (1 + (weatherdata[day].wind / 10));
 }
 
 map.on('zoomend', function() {
