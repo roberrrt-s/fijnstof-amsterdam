@@ -33,7 +33,7 @@ for (var i = 0; i < stofdata.length; i++) {
 
 }
 
-TweenMax.staggerFrom("circle", 1.5, {
+TweenMax.staggerFrom(".stofcirkel", 1.5, {
 	opacity: 0,
 	delay: 0
 }, 0.005)
@@ -60,6 +60,7 @@ function createForce(location, zoom, day) {
 	}
 
 	var svg = d3.select("#point-" + location).append("svg")
+		.attr("class", "circle-container")
 		.attr("id", "force-" + location)
 	    .attr("width", width)
 	    .attr("height", height)
@@ -93,8 +94,9 @@ function createForce(location, zoom, day) {
 	    	return zoomdata[0][zoom].r;
 	    })
 	    .attr("class", function(d) {
-	    	return soort
-	    })
+	    	return soort + " stofcirkel"
+	    })	    
+
 
 }
 
@@ -104,9 +106,9 @@ function updateDay(day) {
 
 function updateWeather(day) {
 
-	var draai;
+	var draai = 0;
 
-	switch(weatherdata[day].wind) {
+	switch(weatherdata[day].richting) {
 		case "W":
 			draai = 0;
 			break;
@@ -122,34 +124,42 @@ function updateWeather(day) {
 		case "O":
 			draai = 180;
 			break;
+		case "ZO":
+			draai = 225;
+			break;
 		case "Z":
 			draai = 270;
+			break;
+		case "ZW":
+			draai = 315;
 			break;	
 	}
 
 	TweenMax.to("#wijzer", 1, {
 		transformOrigin: "50% 50%",
-		scale: 1 + (weatherdata[day].wind / 10),
+		scale: 0.6 + (weatherdata[day].wind / 5),
 	}, 0.2)
 
 	TweenMax.to("#pointer", 1, {
-		transformOrigin: "64% 50%",
+		transformOrigin: "65% 50%",
 		rotation: draai
 	}, 0.2)
-//	document.getElementById("weather").innerHTML = weatherdata[day].richting + " " + (1 + (weatherdata[day].wind / 10));
+
+	document.getElementById("metadata").innerHTML = weatherdata[day].richting + " richting en " + weatherdata[day].wind + " km/h";
+
 }
 
 map.on('zoomend', function() {
 
 	var currentzoom = map.getZoom();
 
-	d3.selectAll("svg")
+	d3.selectAll(".circle-container")
 	    .attr("width", zoomdata[0][currentzoom].d)
 	    .attr("height", zoomdata[0][currentzoom].d)
 	    .attr("left", zoomdata[0][currentzoom].d / 2)
 	    .attr("top", zoomdata[0][currentzoom].d / 2)
 
-	d3.selectAll("circle")
+	d3.selectAll(".stofcirkel")
 	    .attr("cx", function(d) {
 	    	return calculate(10, zoomdata[0][currentzoom].d - zoomdata[0][currentzoom].r);
 	    })
@@ -160,7 +170,7 @@ map.on('zoomend', function() {
 	    	return zoomdata[0][currentzoom].r;
 	    })
 
-	TweenMax.staggerFrom("circle", 1, {
+	TweenMax.staggerFrom(".stofcirkel", 1, {
 		opacity: 0,
 		delay: 0
 	}, 0.001)
@@ -183,7 +193,7 @@ document.getElementById("continue").addEventListener("click", function() {
 		createForce(stofdata[i].id, currentzoom, day)
 	}
 
-	TweenMax.staggerFrom("circle", 0.5, {
+	TweenMax.staggerFrom(".stofcirkel", 0.5, {
 		opacity: 0,
 		delay: 0
 	}, 0.001)
@@ -206,7 +216,7 @@ document.getElementById("previous").addEventListener("click", function() {
 		createForce(stofdata[i].id, currentzoom, day)
 	}
 
-	TweenMax.staggerFrom("circle", 0.5, {
+	TweenMax.staggerFrom(".stofcirkel", 0.5, {
 		opacity: 0,
 		delay: 0
 	}, 0.001)
@@ -228,7 +238,7 @@ document.getElementById("stofsoort").addEventListener("click", function() {
 		createForce(stofdata[i].id, currentzoom, day)
 	}
 
-	TweenMax.staggerFrom("circle", 0.5, {
+	TweenMax.staggerFrom(".stofcirkel", 0.5, {
 		opacity: 0,
 		delay: 0
 	}, 0.001)

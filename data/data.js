@@ -197,11 +197,11 @@ function getWeather() {
 	},
 	{
 		wind: 6.4, 
-		richting: "ZZW"
+		richting: "ZW"
 	},
 	{
 		wind: 2.3, 
-		richting: "WZW"
+		richting: "ZW"
 	},
 	{
 		wind: 0.4, 
@@ -209,6 +209,90 @@ function getWeather() {
 	},
 	{
 		wind: 3.8, 
+		richting: "NO"
+	},
+	{
+		wind: 6.6, 
+		richting: "NO"
+	},
+	{
+		wind: 3.4, 
+		richting: "NO"
+	},
+	{
+		wind: 7.7, 
+		richting: "NO"
+	},
+	{
+		wind: 4.9, 
+		richting: "NO"
+	},
+	{
+		wind: 2.1, 
+		richting: "O"
+	},
+	{
+		wind: 1.1, 
+		richting: "NO"
+	},
+	{
+		wind: 0.1, 
+		richting: "O"
+	},
+	{
+		wind: 0.4, 
+		richting: "NW"
+	},
+	{
+		wind: 0.6, 
+		richting: "NO"
+	},
+	{
+		wind: 2.4, 
+		richting: "NW"
+	},
+	{
+		wind: 6, 
+		richting: "ZW"
+	},
+	{
+		wind: 5.4, 
+		richting: "W"
+	},
+	{
+		wind: 1.4, 
+		richting: "Z"
+	},
+	{
+		wind: 2.5, 
+		richting: "Z"
+	},
+	{
+		wind: 1.5, 
+		richting: "NW"
+	},
+	{
+		wind: 1, 
+		richting: "ZO"
+	},
+	{
+		wind: 0.8, 
+		richting: "ZO"
+	},
+	{
+		wind: 1.2, 
+		richting: "ZO"
+	},
+	{
+		wind: 3.2, 
+		richting: "Z"
+	},
+	{
+		wind: 1.8, 
+		richting: "ZO"
+	},
+	{
+		wind: 1, 
 		richting: "NO"
 	}]
 }
