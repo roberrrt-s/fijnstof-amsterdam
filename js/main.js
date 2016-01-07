@@ -244,3 +244,7 @@ document.getElementById("stofsoort").addEventListener("click", function() {
 	}, 0.001)
 
 });
+
+$('#video').click(function(){
+  $('#video').hide()
+})
