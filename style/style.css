@@ -79,17 +79,42 @@ rect:hover {
 }
 
 #video {
-  width: 800px;
-  height: 600px;
-  position: absolute;
-  top: 50px;
-  position:absolute;
-  left:0;
-  right:0;
-  margin-left:auto;
-  margin-right:auto;
-  text-align: center;
-  z-index: 99999;
-  background-color: #FFF;
-  border: 1px solid #000;
+	width: 800px;
+	height: 600px;
+	position: absolute;
+	top: 50px;
+	position:absolute;
+	left:0;
+	right:0;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	z-index: 99999;
+	background-color: #FFF;
+	border: 1px solid #000;
+}
+
+#legenda {
+	width: 180px;
+	height: 60px;
+	position: absolute;
+	bottom: 20px;
+	right: 10px;
+	background-color: #222;
+	color: #FFF;
+	padding: 2px;
+}
+
+#bolletje {
+	width: 20px;
+	height: 20px;
+	border-radius: 20px;
+	background-color: #F68E2F;
+	margin: 25px 5px 5px 5px;
+	float: left;
+}
+
+#omschrijving {
+	font-size: 0.8em;
+	padding: 8px;
 }

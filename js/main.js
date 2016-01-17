@@ -227,9 +227,11 @@ document.getElementById("stofsoort").addEventListener("click", function() {
 
 	if(soort !== "fijnstof") {
 		soort = "fijnstof"
+		$("#bolletje").css("background-color","#F68E2F");
 	}
 	else {
 		soort = "ultrafijnstof"
+		$("#bolletje").css("background-color","#EB4040");
 	}
 
 	var currentzoom = map.getZoom();
@@ -248,3 +250,4 @@ document.getElementById("stofsoort").addEventListener("click", function() {
 $('#video').click(function(){
   $('#video').hide()
 })
+
