@@ -1,5 +1,4 @@
- function getStof() {
-	return [{
+ var getStof = [{
 		id: 0,
 		name: "Amsterdam-A10-West",
 		coordinates: {
@@ -89,8 +88,7 @@
 		fijnstof: [20.4,26.1,46,55.5,33.4,20,13.9,13.9,18.4,25.5,23.7,24.5,28.6,12.4,20.2,23.3,10.9,16.8,21.9,9.1,18.2,10.8,34.1,22.7,10.6,20.6,29.6,33.1,34.8,22.8,34.5],
 		ultrafijnstof: []
 	}]
-}
-	
+
 function getZoom() {
 	return [{
 		1: {
@@ -135,7 +133,7 @@ function getZoom() {
 		},
 		11: {
 			r: 2,
-			d: 50
+			d: 100
 		},
 		12: {
 			r: 4,
