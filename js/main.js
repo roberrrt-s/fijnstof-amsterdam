@@ -1,7 +1,9 @@
+/* Functie om een willkeurig getal in een range te genereren */
 var calculate = function(min, max) {
 	return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
+/* Globala variablen declareren */
 var stofdata = getStof,
 	zoomdata = getZoom(),
 	datedata = getDates(),
@@ -10,11 +12,14 @@ var stofdata = getStof,
 	day = 0,
 	soort = "fijnstof";
 
+/* Verberg de grafiek standaard */
 $('#grafiek').hide();
 
+/* Declareer leaflet map en zet de view op Amsterdam */
 var map = L.map('map').setView([52.370216, 4.895168], zoom);
 
-L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6IjZjNmRjNzk3ZmE2MTcwOTEwMGY0MzU3YjUzOWFmNWZhIn0.Y8bhBaUMqFiPrDRW9hieoQ', {
+/* Genereer een map op de kaart */
+L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1Ijoicm9iZXJ0c3BpZXIiLCJhIjoiY2lqeGU5ZzRiMHZob3YybTUxYnhtdmZ3eCJ9.w9zbm8h1PwES8y-vN12X7w', {
 	maxZoom: 17,
 	attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
 		'<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
@@ -22,25 +27,28 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=p
 	id: 'mapbox.light'
 }).addTo(map);
 
+/* Roep de functies aan waarmee de content gegenereert wordt */
 updateDay(day);
 updateWeather(day);
 createGraph(day)
 
+/* Plaats de svg's met stofdeeltjes en de meetstations op de kaart */
 for (var i = 0; i < stofdata.length; i++) {
 	var information = L.marker([stofdata[i].coordinates.lat, stofdata[i].coordinates.lon], {icon: L.icon({ iconUrl: "images/marker-icon.png", className: "location-icon"})}).addTo(map).bindPopup("Dit meetstation bevindt zich op:<br> <span class='popup-info'>" + stofdata[i].name + "</span>");;
 }
-
 for (var i = 0; i < stofdata.length; i++) {
 		L.marker([stofdata[i].coordinates.lat, stofdata[i].coordinates.lon], {icon: L.divIcon({iconSize: new L.Point("100%", "100%"), className: "id-" + stofdata[i].id })}).addTo(map);
 		document.getElementsByClassName("id-" + stofdata[i].id)[0].id = "point-" + stofdata[i].id;
 		createForce(stofdata[i].id, zoom, day)
 }
 
+/* Geef de cirkels een mooie fade mee */
 TweenMax.staggerFrom(".stofcirkel", 1.5, {
 	opacity: 0,
 	delay: 0
 }, 0.005)
 
+/* Creeër de cirkels in de svg's om de stofdeeltjes te visualiseren */
 function createForce(location, zoom, day) {
 
 	var width = zoomdata[0][zoom].d,
@@ -103,6 +111,7 @@ function createForce(location, zoom, day) {
 
 }
 
+/* Zet de huidige dag neer */
 function updateDay(day) {
 	document.getElementById("dag").innerHTML = datedata.datum[day]
 }

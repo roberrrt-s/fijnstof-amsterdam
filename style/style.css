@@ -109,7 +109,7 @@ rect:hover {
 
 #legenda {
 	width: 180px;
-	height: 60px;
+	height: 120px;
 	position: absolute;
 	bottom: 20px;
 	right: 10px;
@@ -127,9 +127,15 @@ rect:hover {
 	float: left;
 }
 
-#omschrijving {
+.omschrijving {
 	font-size: 0.7em;
 	padding: 8px;
+}
+
+#meetstation img {
+	width: 15px;
+	float: left;
+	margin: 5px;
 }
 
 .location-icon {
