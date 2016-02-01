@@ -21,7 +21,7 @@ var map = L.map('map').setView([52.370216, 4.895168], zoom);
 /* Genereer een map op de kaart */
 L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1Ijoicm9iZXJ0c3BpZXIiLCJhIjoiY2lqeGU5ZzRiMHZob3YybTUxYnhtdmZ3eCJ9.w9zbm8h1PwES8y-vN12X7w', {
 	maxZoom: 17,
-	attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
+	attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors,' +
 		'<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
 		'Imagery © <a href="http://mapbox.com">Mapbox</a>',
 	id: 'mapbox.light'
